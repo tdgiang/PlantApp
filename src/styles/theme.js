@@ -26,28 +26,7 @@ const sizes = {
   caption: 12
 };
 
-const fonts = {
-  h1: {
-    fontSize: sizes.h1
-  },
-  h2: {
-    fontSize: sizes.h2
-  },
-  h3: {
-    fontSize: sizes.h3
-  },
-  header: {
-    fontSize: sizes.header
-  },
-  title: {
-    fontSize: sizes.title
-  },
-  body: {
-    fontSize: sizes.body
-  },
-  caption: {
-    fontSize: sizes.caption
-  }
-};
+ 
+ 
 
-export { colors, sizes, fonts };
+export { colors, sizes};

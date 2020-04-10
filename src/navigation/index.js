@@ -32,7 +32,7 @@ export default class index extends Component {
     render() {
         return (
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Browse">
+                <Stack.Navigator initialRouteName="Welcome">
                     <Stack.Screen 
                         name="Browse" 
                         component={Browse}
@@ -72,7 +72,14 @@ export default class index extends Component {
                     <Stack.Screen 
                         name="Welcome" 
                         component={Welcome} 
-                        options={this._settingOption()}
+                        options={{
+                            title:"",
+                            headerStyle: {
+                                 elevation:0,
+                                 height:0
+                              },
+                            
+                        }}
                     
                     />
                 </Stack.Navigator>
