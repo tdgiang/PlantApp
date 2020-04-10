@@ -9,7 +9,7 @@ import {
      render() {
          return (
              <View>
-                 <TouchableOpacity  onPress={()=>console.log(this.props.navigation)
+                 <TouchableOpacity  onPress={()=>this.props.navigation.push("Explore")
                  } >
                     <Text>Browse</Text>
                  </TouchableOpacity>
