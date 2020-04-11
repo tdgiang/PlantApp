@@ -28,7 +28,8 @@ const {width,height}=Dimensions.get('window');
     },
     txth1Bold:{
         fontSize:sizes.h1,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        
     },
     txth3Gray2:{
         fontSize:sizes.h3,
@@ -44,7 +45,8 @@ const {width,height}=Dimensions.get('window');
         width:width-100,
         padding:10,
         borderRadius:5,
-        elevation:1
+        elevation:1,
+        alignItems:'center'
     },
     imgSlide:{
         width:width,
@@ -64,10 +66,15 @@ const {width,height}=Dimensions.get('window');
         height:5,
         backgroundColor:colors.gray,
         marginHorizontal:10,
-        borderRadius:10
+        borderRadius:10,
+        
     
+    },
+    txtInput:{
+        borderBottomWidth:1,
+        borderBottomColor:colors.gray2,
+        marginVertical:10
     }
-    
 
 
  })

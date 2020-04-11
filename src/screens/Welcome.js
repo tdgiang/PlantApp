@@ -4,7 +4,8 @@ import {
     Text,
     TouchableOpacity,
     Image,
-    FlatList
+    FlatList,
+    Modal
  } from 'react-native';
 import styles from '../styles/styles';
 import {colors} from '../styles/theme';
@@ -21,7 +22,8 @@ export default class Welcome extends Component {
     constructor(props){
         super(props);
         this.state={
-            step:0
+            step:0,
+            showModal:false
         }
     }
 
@@ -31,12 +33,12 @@ export default class Welcome extends Component {
         {
             if(this.state.step==i)
             {
-                steps.push(<View style={{...styles.dot,width:8,height:8,backgroundColor:'black'}}  />);
+                steps.push(<View  key={`${i}`} style={{...styles.dot,width:8,height:8,backgroundColor:'black'}}  />);
                 continue;
 
             }
                 
-            steps.push(<View style={styles.dot}  />)
+            steps.push(<View key={`${i}`} style={styles.dot}  />)
         }
 
         return steps;
@@ -95,10 +97,20 @@ export default class Welcome extends Component {
                     <TouchableOpacity style={btnLogin} >
                         <Text  style={txtSignUp} >Signup</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity  onPress={()=>this.setState({showModal:true})} >
                         <Text  style={{color:colors.gray}} >Terms of service</Text>
                     </TouchableOpacity>
-                    
+                    <Modal 
+                        visible={this.state.showModal}
+                        animationType='slide'
+                    >
+                        <View  style={styles.containerCenter} >
+                            <Text>Description temrms of service</Text>
+                            <TouchableOpacity   style={btnLogin} onPress={()=>this.setState({showModal:false})} >
+                                <Text>Chấp nhận...........</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </Modal>
                  </View>
              </View>
              
