@@ -10,7 +10,7 @@ const avatar=require('../constants/images/images/avatar.png');
 const titleTabs=["Products","Inspirations","Shop"];
 import categories from '../constants/data/categories';
 import styles from '../styles/styles';
- 
+import  renderHeader from '../components/header';
 export default class Browse extends Component {
     constructor(props){
         super(props);
@@ -70,25 +70,19 @@ export default class Browse extends Component {
         return tabs;   
     }
 
-
+ 
 
      render() {
          const {imgAvatar,containerTab}=styles;
          return (
-             <Block flex={1} margin={[0,20]} >
-                <Block flex={0.1} center  row space={'between'} >
-                    <Text h1 bold >Browse</Text>
-                    <TouchableOpacity>
-                        <Image  style={imgAvatar}  source={avatar}  />
-                    </TouchableOpacity>
-                    
+             <Block color={'white'} padding={[0,20]} flex={1}>
+                 <Block   flex={0.2} space={'between'} >
+                    {renderHeader("Browse",this.props.navigation)}
+                    <Block flex={1} row    space={'between'} style={containerTab}  >                     
+                        {this.renderTabs()}      
+                    </Block>
                 </Block>
-                <Block flex={0.1} row margin={[20,0]}  space={'between'} style={containerTab}  >
-                    
-                    {this.renderTabs()}
-                    
-                </Block>
-                <Block flex={1}  >
+                <Block flex={1}   padding={[20,0,0,0]}   >
                     <FlatList
                         showsVerticalScrollIndicator={false}
                         data={this.state.dataCategories}

@@ -86,13 +86,15 @@ const {width,height}=Dimensions.get('window');
     },
     itemStyle:{
         backgroundColor:'white',
-        elevation:2,
+        elevation:1,
         borderRadius:sizes.radius,
         flex:1,
         justifyContent:'center',
         alignItems:'center',
         marginBottom:20,
-        paddingVertical:20
+        paddingVertical:20,
+        borderWidth:1,
+        borderColor:colors.gray2
     
     },
     bgImg:{
@@ -104,8 +106,20 @@ const {width,height}=Dimensions.get('window');
         borderRadius:40,
         marginBottom:5
         
+    },
+    bodySetting:{
+        borderTopColor:colors.gray2,
+        borderBottomColor:colors.gray2,
+        borderTopWidth:1,
+        borderBottomWidth:1,
+       
+
+    },
+    silerStyle:{
+        width:width-40,
+        marginHorizontal:0,
+        height:20
     }
- 
 
 
  })

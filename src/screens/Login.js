@@ -31,7 +31,7 @@ import styles from '../styles/styles';
                                     secureTextEntry
                                     autoCompleteType={'password'}
                                 />
-                                <Button gradient >
+                                <Button gradient onPress={()=>this.props.navigation.push('Browse')} >
                                     <Text  center white h3 >Login</Text>
                                 </Button>
                                 <TouchableOpacity>
