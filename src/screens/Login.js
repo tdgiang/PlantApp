@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { 
-    View,TouchableOpacity,TextInput,KeyboardAvoidingView,TouchableWithoutFeedback, Keyboard
+    TouchableOpacity,TextInput,KeyboardAvoidingView,TouchableWithoutFeedback, Keyboard
  } from 'react-native';
  import {Text,Button,Block} from '../components/index';
 import styles from '../styles/styles';
@@ -9,9 +9,9 @@ import styles from '../styles/styles';
      render() {
          return (
              <Block  color={'white'} middle  padding={[0,20]} flex={1} >
-                    <View style={{flex:1}} >
-                    <Text  h1 bold >Login</Text>
-                    </View>
+                     <Block flex={0.5} >
+                        <Text  h1 bold >Login</Text>
+                     </Block>
                     <KeyboardAvoidingView  
                         behavior={'padding'} 
                         style={{flex:2}} 

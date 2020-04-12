@@ -73,8 +73,39 @@ const {width,height}=Dimensions.get('window');
     txtInput:{
         borderBottomWidth:1,
         borderBottomColor:colors.gray2,
-        marginVertical:10
+        marginBottom:10
+    },
+    imgAvatar:{
+        width:50,
+        height:50
+    },
+    containerTab:{
+        borderBottomColor:colors.gray2,
+        borderBottomWidth:1,
+        
+    },
+    itemStyle:{
+        backgroundColor:'white',
+        elevation:2,
+        borderRadius:sizes.radius,
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center',
+        marginBottom:20,
+        paddingVertical:20
+    
+    },
+    bgImg:{
+        width:80,
+        height:80,
+        backgroundColor:'#66ffc2',
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:40,
+        marginBottom:5
+        
     }
+ 
 
 
  })
