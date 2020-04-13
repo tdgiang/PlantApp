@@ -86,21 +86,20 @@ const {width,height}=Dimensions.get('window');
     },
     itemStyle:{
         backgroundColor:'white',
-        elevation:1,
+        elevation:2,
         borderRadius:sizes.radius,
         flex:1,
         justifyContent:'center',
         alignItems:'center',
         marginBottom:20,
         paddingVertical:20,
-        borderWidth:1,
-        borderColor:colors.gray2
+ 
     
     },
     bgImg:{
         width:80,
         height:80,
-        backgroundColor:'#66ffc2',
+        backgroundColor:'#b3ffd9',
         justifyContent:'center',
         alignItems:'center',
         borderRadius:40,

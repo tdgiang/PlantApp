@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import { 
-    View,
+    TextInput,
     Switch,
      TouchableOpacity,
-     Dimensions
+     Dimensions,
+     KeyboardAvoidingView
  } from 'react-native';
  import {Block,Text,Button} from '../components/index';
 import renderHeader from '../components/header';
 import styles  from '../styles/styles';
 import profile from '../constants/data/profile';
 import Slider from '@react-native-community/slider';
+ 
 export default class Setting extends Component {
     constructor(props)
     {
         super(props);
         this.state={
-            switchNotifi:true,
-            switchNews:false,
-            profile:profile
+            profile:profile,
+            editName:false,
+            editLocation:false
         }
     }
 
@@ -39,38 +41,95 @@ export default class Setting extends Component {
             
         })
     }
+    renderUserName(){
+        const {profile,editName}=this.state;
+        if(editName)
+        {
+            return(
+                <TextInput 
+                    style={{ height:40,width:200,alignItems:'center'}}
+                    value={profile.username}
+                    autoFocus
+                    onChangeText={(val)=>this.setState({
+                        profile:{
+                            ...profile,
+                            username:val
+                        }
+                    })}
+                />
+            )
+        }
+
+        return <Text bold>{profile.username}</Text>
+
+    }
+    renderLocation(){
+        const {profile,editLocation}=this.state;
+        if(editLocation)
+        {
+            return(
+                <TextInput 
+                    style={{ height:40,width:200,alignItems:'center'}}
+                    value={profile.location}
+                    autoFocus
+                    onChangeText={(val)=>this.setState({
+                        profile:{
+                            ...profile,
+                            location:val
+                        }
+                    })}
+                />
+            )
+        }
+
+        return <Text bold>{profile.location}</Text>
+
+    }
   
      
      render() {
          const {bodySetting,silerStyle}=styles;
-         const {switchNotifi,switchNews}=this.state;
+         const {editName,editLocation}=this.state;
          const  {username,location,email,budget,monthly_cap,notifications,newsletter}=this.state.profile
          return (
+             
+ 
+
+             
              <Block flex={1} padding={[0,20]} color={'white'}  >
                  <Block flex={1} >
                     {renderHeader('Settings',this.props.navigation)}
                  </Block>
-                 <Block flex={3} middle   >
-                    <Text gray2 >Username</Text>
-                    <Block row  space={'between'} >
-                        <Text>{username}</Text>
-                        <TouchableOpacity>
-                            <Text  secondary >Edit</Text>
-                        </TouchableOpacity>
-                        
-                    </Block>
-                    <Text gray2 >Location</Text>
-                    <Block row  space={'between'} >
-                        <Text>{location}</Text>
-                        <TouchableOpacity>
-                            <Text  secondary >Edit</Text>
-                        </TouchableOpacity>
-                    </Block>
-                    <Text gray2 >E-mail</Text>
-                    <Block row >
-                        <Text>{email}</Text>
-                    </Block>
+                    <Block flex={3} middle   >
+                        <Block  flex={1}   padding={[10,0]} >
+                            <Text gray2 >User name</Text>
+                            <Block row  center  space={'between'} >
+                                {this.renderUserName()}
+                                <TouchableOpacity  
+                                    onPress={()=>this.setState({editName:!editName})} 
+                                >
+                                    <Text  secondary >{editName?'Save':'Edit' }</Text>
+                                </TouchableOpacity>
+                            
+                            </Block>
+                        </Block>
+                        <Block flex={1} padding={[10,0]}  >
+                            <Text gray2 >Location</Text>
+                            <Block row  center space={'between'} >
+                                {this.renderLocation()}
+                                <TouchableOpacity  onPress={()=>this.setState({editLocation:!editLocation})} >
+                                    <Text  secondary >{editLocation?'Save':'Edit' }</Text>
+                                </TouchableOpacity>
+                            </Block>
+                        </Block>
+                        <Block  flex={1}  padding={[10,0]} >
+                            <Text gray2 >E-mail</Text>
+                            <Block row center >
+                                <Text bold >{email}</Text>
+                            </Block>
+                        </Block>
                  </Block>
+               
                  <Block flex={2}  style={bodySetting} >
                     <Block  flex={0.5} middle    >
                         <Text gray >Budget</Text>
@@ -131,6 +190,7 @@ export default class Setting extends Component {
                     </Block>
 
              </Block>
+              
          );
      }
  }

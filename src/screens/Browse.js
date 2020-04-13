@@ -75,14 +75,14 @@ export default class Browse extends Component {
      render() {
          const {imgAvatar,containerTab}=styles;
          return (
-             <Block color={'white'} padding={[0,20]} flex={1}>
-                 <Block   flex={0.2} space={'between'} >
+             <Block   flex={1}>
+                 <Block  padding={[0,20]}  color={'white'}    flex={0.2} space={'between'} >
                     {renderHeader("Browse",this.props.navigation)}
                     <Block flex={1} row    space={'between'} style={containerTab}  >                     
                         {this.renderTabs()}      
                     </Block>
                 </Block>
-                <Block flex={1}   padding={[20,0,0,0]}   >
+                <Block flex={1}   padding={[20,20,0,20]}   >
                     <FlatList
                         showsVerticalScrollIndicator={false}
                         data={this.state.dataCategories}
