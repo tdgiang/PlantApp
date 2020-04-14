@@ -32,7 +32,7 @@ export default class index extends Component {
     render() {
         return (
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Explore">
+                <Stack.Navigator initialRouteName="Welcome">
                     <Stack.Screen 
                         name="Browse" 
                         component={Browse}

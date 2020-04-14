@@ -27,6 +27,7 @@ export default class Welcome extends Component {
         }
     }
 
+   
     renderStep(){
          let steps=[];
         for(let i=0;i<3;i++)
@@ -50,6 +51,7 @@ export default class Welcome extends Component {
             txth1Bold,txth3Gray2,txtGreen,
             btnLogin,txtLogin,txtSignUp,
             imgSlide,containerDot}=styles;
+        const {navigation}=this.props;
          return (
              <View  style={{flex:1,backgroundColor:'white'}} >
                  <View style={containerCenter}>
@@ -61,8 +63,7 @@ export default class Welcome extends Component {
                  </View>
 
                  <View style={{flex:2}}>
-                     <FlatList
-                        
+                     <FlatList   
                         data={data}
                         renderItem={({item})=> <Image
                         style={imgSlide}
@@ -75,7 +76,6 @@ export default class Welcome extends Component {
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item)=>item.toString()}
                         onScrollEndDrag={()=>this.setState({step:(this.state.step+1)%3})}
-                        
                      />
                      <View   style={containerDot}>
                         {this.renderStep()}
@@ -84,7 +84,9 @@ export default class Welcome extends Component {
                  </View>
                  <View   style={{flex:1,justifyContent:'space-around',alignItems:'center'}} >
                  
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={()=>navigation.navigate('Login')}
+                    >
                         <LinearGradient 
                             start={{x: 0, y: 0}} end={{x: 1, y: 0}} 
                             colors={[colors.primary, colors.secondary]} 
@@ -94,7 +96,10 @@ export default class Welcome extends Component {
                         </LinearGradient>      
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={btnLogin} >
+                    <TouchableOpacity 
+                        style={btnLogin}
+                        onPress={()=>navigation.navigate('SignUp')}
+                     >
                         <Text  style={txtSignUp} >Signup</Text>
                     </TouchableOpacity>
                     <TouchableOpacity  onPress={()=>this.setState({showModal:true})} >

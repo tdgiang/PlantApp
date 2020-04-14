@@ -13,6 +13,7 @@ export default class Typography extends Component {
       h3,
       title,
       body,
+      header,
       caption,
       small,
       size,
@@ -49,6 +50,7 @@ export default class Typography extends Component {
       h1 && styles.h1,
       h2 && styles.h2,
       h3 && styles.h3,
+      header && styles.header,
       title && styles.title,
       body && styles.body,
       caption && styles.caption,
@@ -129,5 +131,6 @@ const styles = StyleSheet.create({
   title: fonts.title,
   body: fonts.body,
   caption: fonts.caption,
-  small: fonts.small
+  small: fonts.small,
+  header:fonts.header
 });

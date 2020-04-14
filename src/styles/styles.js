@@ -16,6 +16,11 @@ const {width,height}=Dimensions.get('window');
         flexDirection:'row',
        
     },
+    rowBetween:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center'
+    },
     txtLogin:{
         color:colors.white,
         textAlign:'center',
@@ -73,7 +78,8 @@ const {width,height}=Dimensions.get('window');
     txtInput:{
         borderBottomWidth:1,
         borderBottomColor:colors.gray2,
-        marginBottom:10
+        marginBottom:10,
+        
     },
     imgAvatar:{
         width:50,
@@ -124,7 +130,9 @@ const {width,height}=Dimensions.get('window');
         width,
         position:'absolute',
         bottom:0,
-        left:0,     
+        left:0, 
+        justifyContent:'center',
+        alignItems:'center'   
     },
     imgExplore:{
         minHeight:100,
@@ -141,6 +149,44 @@ const {width,height}=Dimensions.get('window');
         flexDirection:'row',
         flexWrap:'wrap',
         justifyContent:'space-between'
+    },
+    inputExplore:{ 
+        height:40,
+        backgroundColor:'rgb(240,240,240)',
+        borderRadius:5,
+        paddingHorizontal:10
+    },
+    imgProduct:{
+        width:width,
+        maxHeight:height/2.5
+    },
+    tagStyle:{
+        borderWidth:1,
+        borderColor:colors.gray2,
+        paddingHorizontal:10,
+        paddingVertical:5,
+        borderRadius:10,
+        marginRight:20
+        
+    },
+    boxProduct:{
+        width:50,
+        height:50,
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:colors.gray2,
+        borderRadius:4
+    
+    },
+    line:{
+        height:1,
+        backgroundColor:colors.gray2,
+        marginVertical:20
+    },
+    txtInput:{
+        borderBottomColor:colors.gray2,
+        borderBottomWidth:1,
+        marginVertical:10
     }
 
 

@@ -26,12 +26,16 @@ export default class Browse extends Component {
     item(item,index){
         let marginRight=(index%2==0)?20:0;
         return(
-            <TouchableOpacity style={[styles.itemStyle,{marginRight}]} >           
+            <TouchableOpacity
+                onPress={()=>this.props.navigation.navigate("Explore")}
+                style={[styles.itemStyle,{marginRight}]} 
+
+            >           
                 <View style={styles.bgImg} >
                     <Image resizeMode={'contain'} style={styles.imgAvatar} source={item.image} />
                 </View>
                 <Text black  >{item.name }</Text>
-                <Text gray >{item.count} produucts</Text>
+                <Text gray >{item.count} products</Text>
             </TouchableOpacity>
         )
     }
